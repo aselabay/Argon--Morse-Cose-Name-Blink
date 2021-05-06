@@ -1,0 +1,85 @@
+int RED_LED = D6;
+int END_LED = D7;
+
+
+SYSTEM_THREAD(ENABLED);
+
+void dot()
+
+{
+    digitalWrite(RED_LED, HIGH);
+    
+    delay(200ms);
+    
+    digitalWrite(RED_LED, LOW);
+    
+    delay(500ms);
+    
+}
+
+void dash()
+
+{
+    digitalWrite(RED_LED, HIGH);
+    
+    delay(750ms);
+    
+    digitalWrite(RED_LED, LOW);
+    
+    delay(500ms);
+    
+}
+
+    
+void setup() {
+	
+	pinMode(RED_LED, OUTPUT);
+	pinMode(END_LED, OUTPUT);
+}
+
+void loop() {
+    
+    //*********************************      A       *************************************************
+    
+    dot();
+    dash();
+    
+    delay(700ms);
+    
+    //*********************************      S       *************************************************
+    
+    dot();
+    dot();
+    dot();
+    
+    delay(700ms);
+    
+    //*********************************      E       *************************************************
+    
+    dot();
+    
+    delay(700ms);
+    
+    //*********************************      L      *************************************************
+    
+    dot();
+    dash();
+    dot();
+    dot();
+    
+    delay(1s);
+    
+    //*********************************      DONE     *************************************************
+    
+     digitalWrite(END_LED, HIGH);
+     delay(5s);
+     
+     digitalWrite(END_LED, LOW);
+     delay(1s);
+     
+     
+    
+    
+    
+    
+}
